@@ -1,0 +1,22 @@
+<template name="registers">
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Registers</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-modal="_registersNew">{{> ionIcon icon="ios-plus-empty"}}</button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionList}}
+        {{#each registers}}
+          {{#ionItem  path="registers.show" buttonRight=true class="item-icon-right"}}
+            {{config.name}} {{config.desc}}
+            {{> ionIcon icon="ios-arrow-forward" class="positive"}}
+          {{/ionItem}}
+        {{/each}}
+      {{/ionList}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

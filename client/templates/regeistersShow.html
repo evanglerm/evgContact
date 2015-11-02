@@ -1,0 +1,48 @@
+<template name="registersShow">
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton path="registers" text="Registers"}}
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Details</h1>
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+    <button class="button button-clear" data-ion-modal="_registersEdit" data-id="{{register._id}}">Edit</button>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent class="padding register-detail"}}
+
+      {{#with register}}
+        <div class="list card">
+
+          <div class="item ">
+
+            <h2>{{config.name}} {{config.desc}}</h2>
+            <p>{{priority}}</p>
+          </div>
+
+
+          </div>
+          {{#ionList}}
+            {{#each fields}}
+              {{name}}  {{type}}
+
+            {{/each }}
+            {{/ionList}}
+      {{/with}}
+
+    {{/ionContent}}
+    <!-- {{#autoForm collection="NewRegister" id="newregister-new-form" type="insert"}}
+      <div class="bar bar-header bar-stable">
+        <button data-dismiss="modal" type="button" class="button button-clear">Cancel</button>
+        <h2 class="title">New Register</h2>
+        <button type="submit" class="button button-positive button-clear">Add</button>
+      </div>
+      <div class="content has-header overflow-scroll">
+      </div>
+    {{/autoForm}} -->
+
+  {{/ionView}}
+</template>
